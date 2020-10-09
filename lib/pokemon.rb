@@ -9,21 +9,11 @@ class Pokemon
     @db = db 
   end
   
-  #def self.save(name, type, db)
-   # db.execute("INSERT INTO pokemon(name, type) 
-    #  VALUES (?, ?);", name, type)
-   #end
-  
   def self.save(name, type, db)
-    sql = <<-SQL
-      INSERT INTO pokemon (name, type)
-      VALUES (?, ?);
-    SQL
- 
-    db[:conn].execute(sql, [name, type])
-    @id = db[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
-  end
-  
+    db.execute("INSERT INTO pokemon(name, type) 
+      VALUES (?, ?);", name, type)
+   end
+
   #def self.find 
     
   
