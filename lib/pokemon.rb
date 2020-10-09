@@ -9,11 +9,19 @@ class Pokemon
     @db = db 
   end
   
-  def self.save(name, type, db)
+  #def self.save(name, type, db)
+   # db.execute("INSERT INTO pokemon(name, type) 
+    #  VALUES (?, ?);", name, type)
+   #end
    
-    db.execute("INSERT INTO pokemon(name, type) 
-      VALUES (?, ?);", name, type)
-   
+   def self.save
+    sql = <<-SQL
+      INSERT INTO songs (name, type) 
+      VALUES (?, ?)
+    SQL
+ 
+    DB[:conn].execute(sql, self.name, self.type)
+ 
   end
   
   def self.find 
