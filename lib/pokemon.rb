@@ -14,14 +14,16 @@ class Pokemon
     #  VALUES (?, ?);", name, type)
    #end
    
-   def self.save
+  def self.save
     sql = <<-SQL
       INSERT INTO songs (name, type) 
       VALUES (?, ?)
     SQL
  
     DB[:conn].execute(sql, self.name, self.type)
+   
  
+  
   end
   
   #def self.find 
