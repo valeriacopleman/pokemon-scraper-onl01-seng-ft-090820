@@ -14,7 +14,9 @@ class Pokemon
       VALUES (?, ?);", name, type)
    end
 
-  def self.find 
+  def self.find(id, db)
+    db.execute
+  end
     
   
 end
