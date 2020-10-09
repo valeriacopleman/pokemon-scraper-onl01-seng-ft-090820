@@ -14,7 +14,7 @@ class Pokemon
     #  VALUES (?, ?);", name, type)
    #end
    
-  def self.save(name, type)
+  def self.save(name, type, db)
     sql = <<-SQL
       INSERT INTO songs (name, type) 
       VALUES (?, ?)
