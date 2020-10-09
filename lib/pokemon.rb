@@ -21,7 +21,7 @@ class Pokemon
     SQL
  
     DB[:conn].execute(sql, self.name, self.type)
-   
+    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM songs")[0][0]
  
   
   end
